@@ -1,0 +1,219 @@
+/* Edix Works - desktop recreation of the supplied Figma design */
+:root {
+  --blue: #0065a8;
+  --light-gray: #eeeeee;
+  --text: #080808;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 1100px;
+  background: #fff;
+  color: var(--text);
+  font-family: 'Noto Sans JP', 'Noto Sans CJK JP', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+h1, h2, h3, p { margin: 0; }
+
+.hero {
+  height: 663px;
+  position: relative;
+  background: url('../assets/Figma_top.png') center center / cover no-repeat;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 20px 0;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 38px;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 47px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.site-nav > a:not(.contact-link) { line-height: 36px; }
+.site-nav a:hover { opacity: .8; }
+.contact-link {
+  width: 154px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 30px;
+}
+.hero-content {
+  position: absolute;
+  top: 273px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.hero-content h1 {
+  font-size: 63px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  line-height: 1.25;
+}
+.hero-content p {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.section-heading { text-align: center; }
+.section-heading h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.15;
+}
+.section-heading p {
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 700;
+  color: var(--blue);
+}
+.service-section {
+  height: 653px;
+  padding-top: 143px;
+}
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  column-gap: 64px;
+  width: 1028px;
+  margin: 88px auto 0;
+}
+.service-item { text-align: center; }
+.service-icon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.service-icon img { width: 90px; height: 90px; object-fit: contain; }
+.service-icon img[src$='icon2.png'] { width: 94px; height: 94px; }
+.service-icon img[src$='icon3.png'] { width: 88px; height: 88px; }
+.service-item h3 {
+  font-size: 23px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-top: 23px;
+}
+.service-item > p {
+  margin-top: 11px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.works-section {
+  height: 1268px;
+  padding-top: 65px;
+}
+.works-grid {
+  width: 1028px;
+  margin: 65px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  column-gap: 64px;
+  row-gap: 74px;
+}
+.work-item > img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.work-item h3 {
+  margin-top: 21px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.work-category {
+  display: table;
+  margin-top: 13px;
+  padding: 2px 6px;
+  background: #eeeeee;
+  border-radius: 4px;
+  color: #111;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.view-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 38px;
+  border-radius: 24px;
+  margin: 83px auto 0;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+}
+
+.about-section {
+  height: 540px;
+  background: var(--light-gray);
+  padding-top: 83px;
+}
+.about-content {
+  width: 810px;
+  margin: 57px auto 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+}
+.about-photo {
+  flex: 0 0 200px;
+  width: 200px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: left center;
+}
+.about-copy { width: 500px; }
+.about-copy h3 {
+  font-size: 34px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.about-copy p {
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.contact-section { height: 222px; background: white; }
+.site-footer {
+  height: 17px;
+  padding: 0 18px;
+  background: #0092f3;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.site-footer small { font-size: 10px; line-height: 1; }
