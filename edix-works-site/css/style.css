@@ -9,7 +9,6 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  min-width: 1100px;
   background: #fff;
   color: var(--text);
   font-family: 'Noto Sans JP', 'Noto Sans CJK JP', sans-serif;
@@ -238,3 +237,100 @@ h1, h2, h3, p { margin: 0; }
   align-items: center;
 }
 .site-footer small { font-size: 10px; line-height: 1; }
+
+.works-dots { display: none; }
+
+/* タブレットでは横幅に合わせた3列グリッドにする。 */
+@media (max-width: 1099px) {
+  .service-section,
+  .works-section,
+  .about-section {
+    height: auto;
+    padding: 80px 24px;
+  }
+  .service-list,
+  .works-grid {
+    width: 100%;
+    max-width: 1028px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 24px;
+    margin-top: 56px;
+  }
+  .service-item,
+  .work-item { min-width: 0; }
+  .service-item h3 { font-size: 20px; }
+  .service-item > p { font-size: 14px; line-height: 1.8; }
+  .work-item > img { width: 100%; height: auto; aspect-ratio: 1; }
+  .work-item > p { font-size: 14px; line-height: 1.8; }
+  .about-content { width: 100%; max-width: 810px; gap: 40px; }
+  .about-copy { width: auto; flex: 1; min-width: 0; }
+  .about-copy p { line-height: 1.8; }
+}
+
+/* スマートフォンではWorksだけを横スワイプ表示に切り替える。 */
+@media (max-width: 767px) {
+  .hero { height: 540px; }
+  .site-header { flex-direction: column; gap: 16px; padding: 24px 16px 0; }
+  .site-nav { width: 100%; max-width: 400px; justify-content: space-between; gap: 8px; font-size: 13px; }
+  .site-nav > a:not(.contact-link) {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .contact-link { width: 90px; height: 44px; }
+  .hero-content { top: 255px; padding: 0 20px; }
+  .hero-content h1 { font-size: clamp(32px, 9vw, 52px); }
+  .hero-content p { font-size: 14px; line-height: 1.8; }
+  .section-heading h2 { font-size: 36px; }
+  .section-heading p { margin-top: 6px; }
+  .service-section,
+  .works-section,
+  .about-section { padding: 64px 20px; }
+  .service-list { grid-template-columns: 1fr; max-width: 400px; gap: 48px; margin-top: 40px; }
+  .service-item h3 { font-size: 22px; margin-top: 20px; }
+  .works-section { padding-inline: 0; }
+  .works-grid {
+    display: flex;
+    width: calc(100% - 40px);
+    gap: 16px;
+    margin-top: 40px;
+    padding: 0 0 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    scrollbar-width: none;
+  }
+  .works-grid::-webkit-scrollbar { display: none; }
+  .work-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    overflow-wrap: anywhere;
+  }
+  .work-item h3 { margin-top: 18px; }
+  .work-item > p { margin-top: 8px; }
+  .works-dots:not([hidden]) { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+  .works-dot {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .works-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #c8c8c8; }
+  .works-dot[aria-current="true"]::before { background: var(--blue); transform: scale(1.25); }
+  .works-grid:focus-visible,
+  .works-dot:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .view-more { margin-top: 32px; min-height: 44px; }
+  .about-content { flex-direction: column; align-items: center; gap: 28px; margin-top: 40px; }
+  .about-photo { flex: none; }
+  .about-copy { flex: none; width: 100%; max-width: 400px; }
+  .about-copy h3 { font-size: 28px; text-align: center; }
+  .about-copy p { margin-top: 14px; }
+  .contact-section { height: 120px; }
+  .site-footer { height: auto; min-height: 40px; padding: 12px 20px; }
+  .site-footer small { font-size: 11px; }
+}
