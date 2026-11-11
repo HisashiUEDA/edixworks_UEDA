@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* 佐藤医院 デスクトップ版。参考画像の1440px相当のレイアウトに合わせています。 */
+:root {
+  --brand-blue: #009fe8;
+  --brand-deep: #096f9c;
+  --schedule-green: #2dc653;
+  --schedule-blue: #13a4eb;
+  --ink: #111;
+  --soft-gray: #eeeeee;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 25px; }
+body { margin: 0; min-width: 1180px; color: var(--ink); background: #fff; font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+a:hover, a:focus-visible { opacity: .77; }
+a:focus-visible { outline: 3px solid #087fa9; outline-offset: 4px; }
+img { display: block; max-width: 100%; }
+h1,h2,h3,p,ul,ol,dl { margin-top: 0; }
+.visually-hidden { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.section-title { color: var(--brand-blue); font-size: 47px; font-weight: 700; text-align: center; line-height: 1.35; margin: 0; }
+.section-title-left { text-align: left; }
+.text-button { display: inline-block; background: #ededed; padding: 7px 12px 9px; color: #111; font-size: 23px; line-height: 1.15; font-weight: 700; white-space: nowrap; }
+.section-link { width: 100%; text-align: right; }
+
+/* Header */
+.site-header { height: 240px; width: 100%; position: relative; background: #fff; }
+.header-nav { display:flex; gap: 23px; justify-content: flex-end; align-items:center; padding: 26px 112px 0 24px; }
+.header-nav a { display:inline-flex; align-items:center; justify-content:center; min-width:95px; height:24px; padding:0 16px; background:var(--brand-deep); color:#fff; border-radius:100px; font-size:16px; line-height:1; }
+.header-inner { display:flex; align-items:center; width: calc(100% - 84px); max-width: 1355px; height: 160px; margin: 15px auto 0; gap: 40px; }
+.brand { display:block; width: 290px; flex: 0 0 290px; }
+.brand img { width:290px; height:auto; }
+.header-name { display:flex; align-items:center; justify-content:space-between; gap:40px; font-size:46px; font-weight:700; color: #009de3; margin:0; white-space: nowrap; flex:1; }
+.header-contact { display:grid; grid-template-columns: 110px 1fr; column-gap: 8px; row-gap: 6px; font-size: 14px; line-height:1.2; margin:0 0 0 4px; flex:0 0 280px; }
+.header-contact dt,.header-contact dd { margin:0; white-space:nowrap; }
+
+/* Hero */
+.hero { position: relative; height: 950px; overflow:hidden; background:#dbe8ee; }
+.hero > img { width:100%; height:100%; object-fit:cover; object-position:center 54%; }
+.hero-copy { position:absolute; top:210px; left:57.5%; color:#fff; font-weight:800; font-size:44px; line-height: 1.6; text-shadow: 0 2px 3px rgba(0,0,0,.23); white-space:nowrap; }
+.hero-copy p { margin:0 0 35px; }
+
+/* Schedule */
+.hours-opening { padding-top: 70px; }
+.schedule-wrapper { width: 1090px; margin: 0 auto; }
+.schedule-table { width:100%; border-collapse:separate; border-spacing:8px 9px; table-layout:fixed; font-size:23px; text-align:center; }
+.schedule-table th,.schedule-table td { height:59px; padding: 5px; font-weight:400; vertical-align:middle; }
+.schedule-table thead th { color:white; background:var(--schedule-green); font-size:19px; }
+.schedule-table thead th:first-child { width:143px; }
+.schedule-table tbody th { background: var(--schedule-blue); color:white; font-size:19px; white-space:nowrap; }
+.schedule-table tbody td { background:#d0d0d0; font-size:35px; line-height:1; }
+.schedule-notes { text-align:center; font-weight:700; font-size:21px; line-height:1.25; margin: 14px auto 0; }
+.schedule-notes p { margin:0; }
+.feature-images { display:grid; grid-template-columns: repeat(3, 1fr); gap:94px; max-width:1378px; width:calc(100% - 64px); margin:82px auto 0; }
+.feature-images img { width:100%; aspect-ratio: 1.65; height:auto; object-fit:cover; }
+
+/* News */
+.news-section { display:grid; grid-template-columns:410px 1fr; gap:98px; width:1180px; margin:105px auto 0; }
+.news-photo { width:410px; height:728px; object-fit:cover; object-position:85% center; }
+.news-copy { position:relative; min-height: 728px; padding-top:0; }
+.news-list { list-style:none; padding:0; margin:39px 0 0; }
+.news-list li { margin-bottom:73px; font-size:30px; line-height:1.4; white-space:nowrap; }
+.news-more { position:absolute; right:0; bottom:5px; }
+
+/* Director's greeting */
+.greeting-section { width:1120px; margin: 55px auto 0; }
+.greeting-content { display:grid; grid-template-columns:410px 1fr; gap:80px; align-items:start; margin-top:60px; }
+.greeting-content > img { width:410px; height:455px; object-fit:cover; object-position:76% center; }
+.greeting-text { font-size:30px; line-height:1.28; }
+.greeting-text p { margin-bottom:24px; }
+.greeting-text .signature { text-align:right; font-size:21px; font-weight:700; margin-top:88px; white-space:nowrap; }
+
+/* Medical treatment rows */
+.medical-section { margin:95px auto 0; }
+.medical-list { width:1000px; margin:135px auto 0; }
+.medical-row { display:grid; grid-template-columns:408px 1fr; gap:73px; align-items:start; margin-bottom:128px; }
+.medical-row > img { width:408px; height:418px; object-fit:cover; }
+.medical-row h3 { font-size:42px; line-height:1.34; margin: 0 0 49px; font-weight:700; white-space:nowrap; }
+.medical-row p { font-size:30px; line-height:1.27; margin:0; }
+.medical-section .section-link { width:1080px; margin: -45px auto 0; }
+
+/* About preview */
+.about-preview { width:1080px; margin: 95px auto 0; }
+.about-panel { display:grid; grid-template-columns:408px 1fr; column-gap:47px; background:#ededed; align-items:stretch; }
+.about-panel > img { width:408px; height:446px; object-fit:cover; }
+.about-panel > div { padding: 3px 18px 18px 0; }
+.about-panel .section-title { margin-bottom:36px; }
+.about-panel p { margin:0; font-size:29px; line-height:1.31; }
+.about-preview .section-link { margin-top:95px; padding-right:88px; }
+
+/* Staff */
+.staff-section { width:1040px; margin: 97px auto 0; }
+.staff-intro { margin:65px 0 73px; font-size:30px; line-height:1.3; }
+.staff-list { margin:0; }
+.staff-row { display:grid; width:1150px; grid-template-columns:408px 1fr; gap:200px; align-items:center; margin-bottom:137px; }
+.staff-row > img { width:408px; height:420px; object-fit:cover; object-position:center; }
+.staff-row h3 { margin:0 0 43px; font-size:41px; line-height:1.2; font-weight:700; white-space:nowrap; }
+.staff-row ul { margin:0; padding-left:35px; font-size:29px; line-height:1.25; }
+.staff-row li { margin-bottom:0; }
+
+/* Map & access */
+.access-section { width:1265px; margin: 105px auto 0; display:grid; grid-template-columns:610px 1fr; gap:37px; align-items:start; }
+.access-map { width:610px; height:610px; object-fit:cover; }
+.access-copy { padding-top:0; }
+.access-copy .section-title { margin-bottom:52px; }
+.access-copy h3 { font-size:43px; margin:0 0 28px; line-height:1.25; }
+.access-copy p,.access-copy ul { font-size:28px; line-height:1.3; }
+.access-copy .address { margin-bottom:6px; font-weight:700; white-space:nowrap; }
+.access-copy ul { padding-left:38px; margin:0 0 20px; }
+.access-copy li { margin-bottom:9px; }
+.access-copy .access-small { font-size:18px; line-height:1.35; margin:14px 0 54px; }
+.access-copy .contact-list { margin:0; }
+.access-copy .contact-list li { margin-bottom:23px; white-space:nowrap; }
+
+/* FAQ excerpt */
+.faq-preview { width:995px; margin: 230px auto 0; }
+.faq-preview-content { margin-top:48px; font-size:30px; line-height:1.27; }
+.faq-subheading { margin-bottom:40px; }
+.qa-item { margin: 0 0 45px; }
+.qa-item p { margin:0; }
+.faq-preview .section-link { margin-top:120px; }
+
+/* End matter */
+.bottom-information { margin: 158px auto 385px; text-align:center; }
+.bottom-information .schedule-wrapper { margin-bottom:105px; }
+.bottom-information .section-title { margin-bottom:40px; }
+.subjects { width:880px; margin: 0 auto 82px; padding-left:0; list-style-position:inside; display:grid; grid-template-columns:repeat(3,1fr); justify-items:center; row-gap:55px; font-size:28px; }
+.subjects li:nth-child(4) { grid-column:1 / -1; }
+.subjects li:nth-child(5) { grid-column:1 / -1; }
+.contact-message { color:var(--brand-blue); font-size:43px; line-height:1.25; font-weight:700; margin:0; }
+.site-footer { background: var(--brand-blue); color:#fff; height:20px; text-align:right; padding-right: 11%; font-size:12px; }
+.site-footer small { font-size:inherit; }
+
+/* Detail pages - centered independently of viewport width; top page styles stay untouched. */
+.detail-page { width: 965px; margin: 0 auto 180px; padding-top: 85px; }
+.detail-head { display:flex; align-items:start; justify-content:space-between; flex-direction:row; min-height:145px; }
+.detail-head h1 { margin-top:55px; margin-right:0; }
+.detail-back { margin-left:auto; font-size:20px; padding:9px 13px; }
+.detail-news .news-detail-entry { margin: 0 0 102px; }
+.detail-news .news-detail-entry h2 { font-size:42px; line-height:1.3; font-weight:700; margin:0 0 43px; }
+.detail-news .news-detail-entry p { font-size:29px; line-height:1.27; margin:0; }
+.detail-news .news-detail-entry:nth-child(n+2) { padding-left:9px; }
+.detail-news .news-detail-entry:nth-child(n+3) { padding-left:18px; }
+.detail-news .news-detail-entry:nth-child(n+4) { padding-left:28px; }
+
+.detail-medical { width: 950px; }
+.detail-medical .detail-head { min-height:240px; }
+.detail-medical-row { display:grid; grid-template-columns:368px 1fr; gap:63px; margin:0 0 135px 38px; align-items:start; }
+.detail-medical-row img { height:378px; width:368px; object-fit:cover; }
+.detail-medical-row h2 { font-size:42px; line-height:1.35; margin: 0 0 37px; }
+.detail-medical-row p { font-size:29px; line-height:1.27; margin:0; }
+
+.detail-about { width: 1040px; }
+.detail-about .detail-head { min-height: 210px; }
+.about-detail-entry { margin:0 0 153px; }
+.about-detail-entry h2 { font-size:42px; line-height:1.3; margin:0 0 55px; }
+.about-detail-entry p, .about-detail-entry ul { font-size:29px; line-height:1.3; margin:0; }
+.about-detail-entry ul { padding-left:35px; }
+
+.detail-faq { width: 985px; }
+.detail-faq .detail-head { min-height: 260px; }
+.faq-detail-group { margin-bottom:150px; }
+.faq-detail-group h2 { font-size:41px; margin:0 0 57px; }
+.faq-detail-group .qa-item { font-size:27px; line-height:1.31; margin-bottom:33px; }
+.detail-faq-message { color:var(--brand-blue); font-weight:700; font-size:37px; line-height:1.3; width:800px; margin:130px auto 0; }
+
+.detail-hours { width:1100px; margin-left:auto; margin-right:auto; }
+.detail-hours .detail-head { margin-bottom:85px; }
+.hours-detail-block h2 { font-size:37px; margin:80px 0 25px; }
+.hours-detail-block p,.subject-detail { font-size:25px; line-height:1.4; }
+.hours-detail-block .schedule-wrapper { width:100%; margin-top:35px; }
+.subject-detail { padding-left:35px; }
+.subject-detail li { margin-bottom:14px; }
+.detail-map { width:560px; height:auto; margin:45px 0; }
+
+/* The supplementary design images intentionally include whitespace below their content. */
+/* NEWS: allow the content to determine the page height; keep a modest final margin. */
+.detail-news { min-height:0; margin-bottom:92px; }
+.detail-news .news-detail-entry:last-child { margin-bottom:0; }
+.detail-news .detail-head { min-height:174px; }
+/* MEDICAL: size follows the real content, with 92px breathing room after the final row. */
+.detail-medical { min-height:0; margin-bottom:92px; }
+.detail-medical .detail-medical-row:last-child { margin-bottom:0; }
+.detail-medical-row:first-of-type img { object-position:left center; }
+.detail-medical-row:nth-of-type(2) img { object-position:right center; }
+/* ABOUT: remove the fixed 2660px minimum height and excess final section margin. */
+.detail-about { min-height:0; margin-bottom:92px; }
+.detail-about .about-detail-entry:last-child { margin-bottom:0; }
+/* FAQ: remove the former 2832px fixed minimum height to avoid excessive blank space below the final answer. */
+.detail-faq { min-height:0; margin-bottom:92px; }
+
+/* Focal points follow the portraits used in the provided desktop design. */
+.medical-row:first-child img { object-position:left center; }
+.medical-row:nth-child(2) img { object-position:left center; }
+.staff-row:nth-child(1) img,
+.staff-row:nth-child(2) img { object-position:85% center; }
+.staff-row:nth-child(4) img { object-position:15% center; }
